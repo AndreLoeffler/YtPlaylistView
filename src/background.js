@@ -1,9 +1,8 @@
-var toggle = false;
-var videos = [ ];
-
 // Copyright (c) 2011 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
+
+var toggle = false;
 
 // When the extension is installed or upgraded ...
 chrome.runtime.onInstalled.addListener(function() {
@@ -29,16 +28,10 @@ chrome.pageAction.onClicked.addListener(function(tab) {
   toggle = !toggle;
   if(toggle){
     chrome.pageAction.setIcon({path: "on.png", tabId:tab.id});
-    chrome.tabs.sendMessage(tab.id, { text: "hide" },
-            doStuffWithDOM);
+    chrome.tabs.sendMessage(tab.id, { text: "hide" }, null);
   }
   else{
     chrome.pageAction.setIcon({path: "of.png", tabId:tab.id});
-    chrome.tabs.sendMessage(tab.id, { text: "show" },
-            doStuffWithDOM);
+    chrome.tabs.sendMessage(tab.id, { text: "show" }, null);
   }
 });
-
-function doStuffWithDOM(domContent) {
-    console.log("I received the following DOM content:\n" + domContent);
-}
