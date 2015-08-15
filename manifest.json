@@ -3,9 +3,13 @@
     "version": "1.0",
     "description": "Hides those items in YouTube Playlists you already viewed using CSS.",
     "background": {
-      "scripts": ["popup.js"],
+      "scripts": ["background.js"],
       "persistent": false
     },
+    "content_scripts": [{
+        "matches": ["*://*.youtube.com/*"],
+        "js":      ["content.js"]
+    }],
     "page_action" :
     {
      "default_icon" : "of.png",
