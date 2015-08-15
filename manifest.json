@@ -1,22 +1,22 @@
   {
-    "name": "Page action by URL",
+    "name": "YouTube Playlist Viewed Hider",
     "version": "1.0",
-    "description": "Shows a page action for urls which have the letter 'g' in them.",
+    "description": "Hides those items in YouTube Playlists you already viewed using CSS.",
     "background": {
       "scripts": ["popup.js"],
       "persistent": false
     },
     "page_action" :
     {
-     "default_icon" : "icon.png",
-     "default_title" : "There's a 'G' in this URL!"
+     "default_icon" : "of.png",
+     "default_title" : "Hide that!"
    },
    "permissions" : [
      "declarativeContent"
    ],
    "icons" : {
-     "48" : "icon.png",
-     "128" : "icon.png"
+     "19" : "on.png",
+     "19" : "of.png"
    },
    "manifest_version": 2
 }

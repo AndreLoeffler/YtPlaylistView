@@ -1,3 +1,5 @@
+var toggle = false;
+
 // Copyright (c) 2011 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -20,4 +22,14 @@ chrome.runtime.onInstalled.addListener(function() {
       }
     ]);
   });
+});
+
+chrome.pageAction.onClicked.addListener(function(tab) {
+  toggle = !toggle;
+  if(toggle){
+    chrome.pageAction.setIcon({path: "on.png", tabId:tab.id});
+  }
+  else{
+    chrome.pageAction.setIcon({path: "of.png", tabId:tab.id});
+  }
 });
